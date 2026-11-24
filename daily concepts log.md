@@ -194,8 +194,46 @@ $$
 P_w\approx P
 $$
 
-We preserve more of the original pixel's deviation, helping retain texture, edges and other local variations.
+We preserve more of the original pixel's deviation, helping retain texture, edges and other local 
+variations.
 Also, high local variance does not guarantee that the variation is genuine texture. It could also be noise. Wiener filtering makes a statistical estimate, not a perfect distinction.
 Adaptive Wiener filtering smooths regions where local variation is close to the estimated noise level, while preserving more variation where the local variance is substantially higher.
+
+
+### after weiner filtering they said to examine the spectral signature of the images
+- firstly they selected 100 pixel in each replica and they have taken 30 replicas in each percent level adulteation
+- now selecting 100 pixels in an image randomly in a replica then each pixel can be represented by 9 pixels
+- so columns are 9 and 100 pixels with each 30 replica would give us total 3000 pixels
+- so data matrix dim are 3000*9 for one percent level
+- this been done for each percent level from 0 to 40
+__spectral curve__
+spectral curve is the graph of pixel intensity val at each wavelength.
+Now why did they select 100 pixels:
+Many pixels may belong to the background rather than turmeric.
+Nearby pixels can be highly similar because they belong to the same physical region.
+Processing every pixel creates a much larger dataset and computational burden.
+The researchers wanted a manageable collection of spectral observations representing the sample.
+
+### why did they prepare 30 replicates per %:
+For example, different preparations can have variation due to:
+- Mixing and distribution of adulterant.
+- Differences in powder packing.
+- Sample surface texture.
+- Small differences during image acquisition.
+
+
+### now why did the mean spectral signatures fail
+For one concentration, they have 3,000 pixel observations. Each observation contains nine intensities.
+
+They calculate the average intensity at each wavelength:
+
+$$
+\bar X_p =
+[\bar I_{405},\bar I_{430},\ldots,\bar I_{950}]
+$$
+
+now rom here two samples have diff adulateration percentages but their average intensities are very similar.
+
+
 
 
