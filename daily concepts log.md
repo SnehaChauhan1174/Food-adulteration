@@ -24,11 +24,13 @@ Probably not.
 - In Region A, small variations are likely to be noise, so stronger smoothing is useful.
 - In Region B, some variations may represent real image structure, so excessive smoothing could destroy useful information.
 this is formula
+
 $$
 P_w[i,j] = \mu[i,j] +
 \frac{\sigma^2[i,j]-v^2}{\sigma^2[i,j]}
 \left(P[i,j]-\mu[i,j]\right)
 $$
+
 A. Local mean
 The local mean tells us the average intensity around the current pixel.
 \[
