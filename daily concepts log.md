@@ -28,7 +28,6 @@ $$
 P_w[i,j] = \mu[i,j] +
 \frac{\sigma^2[i,j]-v^2}{\sigma^2[i,j]}
 \left(P[i,j]-\mu[i,j]\right)
-
 $$
 A. Local mean
 The local mean tells us the average intensity around the current pixel.
