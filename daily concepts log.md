@@ -177,9 +177,10 @@ They selected \(m=1\), giving a 3 × 3 window, as a compromise between noise red
    Suppose the local variance is close to the estimated noise variance.
 
 The weight becomes small, so:
-\[
+
+$$
 P_w\approx\mu
-\]
+$$
 
 We move the pixel towards its neighbourhood's mean because its deviation may largely be noise.
 
@@ -188,13 +189,13 @@ Situation B: Pixel variation contains useful structure
 Suppose local variance is much greater than the estimated noise variance.
 
 The weight becomes large, so:
-\[
+
+$$
 P_w\approx P
-\]
+$$
 
 We preserve more of the original pixel's deviation, helping retain texture, edges and other local variations.
 Also, high local variance does not guarantee that the variation is genuine texture. It could also be noise. Wiener filtering makes a statistical estimate, not a perfect distinction.
 Adaptive Wiener filtering smooths regions where local variation is close to the estimated noise level, while preserving more variation where the local variance is substantially higher.
 
 
-   
