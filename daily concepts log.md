@@ -43,11 +43,12 @@ This is the same averaging calculation we just discussed.
 It estimates the local background or typical intensity.
 B. Local variance
 Variance tells us how much the pixel values differ from their local mean.
-\[
+
+$$
 \sigma^2[i,j]=
 \frac{1}{N}\sum_{k=-m}^{m}\sum_{l=-m}^{m}
 P^2[i+k,j+l]-\mu^2[i,j]
-\]
+$$
 
 Intuition:
 - Low variance: neighbouring pixels have similar intensities.
@@ -55,10 +56,11 @@ Intuition:
 High variance could indicate noise, texture, an edge, or actual sample structure. Variance alone cannot tell us which one it is.
 C. Estimate the noise variance
 The paper then estimates a global noise variance:
-\[
+
+$$
 v^2=\frac{1}{L\times W}
 \sum_{i=0}^{L-1}\sum_{j=0}^{W-1}\sigma^2[i,j]
-\]
+$$
 
 Here:
 - \(L\) = image length (number of rows).
@@ -69,48 +71,54 @@ The paper assumes this white-noise variance is constant across the image and est
 
 6. The actual Wiener filtering equation
 The paper gives:
-\[
+
+$$
 \boxed{
 P_w[i,j]=\mu[i,j]+
 \frac{\sigma^2[i,j]-v^2}{\sigma^2[i,j]}
 \left(P[i,j]-\mu[i,j]\right)
 }
-\]
+$$
 
 Let's break this into three parts.
 
 Part 1: Local mean
-\[
+
+$$
 \mu[i,j]
-\]
+$$
 
 This is the typical intensity of the neighbourhood.
 
 Part 2: Deviation from the local mean
-\[
+
+$$
 P[i,j]-\mu[i,j]
-\]
+$$
 
 This tells us how far the original pixel is from its neighbourhood's average.
 
 Part 3: Adaptive weight
-\[
+
+$$
 \frac{\sigma^2[i,j]-v^2}{\sigma^2[i,j]}
-\]
+$$
 
 This determines how much of the original pixel's deviation we preserve.
 
 Let's understand that weight.
 Case A: Low local variance
 Suppose:
-\[
+
+$$
 \sigma^2[i,j]=10,\qquad v^2=8
-\]
+$$
 
 Then:
-\[
+
+$$
 \text{Weight}=\frac{10-8}{10}=0.2
-\]
+$$
 
 Only 20% of the original deviation from the local mean is retained.
 
@@ -119,14 +127,16 @@ The output moves closer to the local mean.
 Interpretation: When local variation is close to the estimated noise level, the filter suppresses much of that variation.
 Case B: High local variance
 Suppose:
-\[
+
+$$
 \sigma^2[i,j]=100,\qquad v^2=8
-\]
+$$
 
 Then:
-\[
+
+$$
 \text{Weight}=\frac{100-8}{100}=0.92
-\]
+$$
 
 Now 92% of the deviation is retained.
 
