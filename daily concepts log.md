@@ -33,6 +33,7 @@ $$
 
 A. Local mean
 The local mean tells us the average intensity around the current pixel.
+
 \[
 \mu[i,j]=\frac{1}{N}\sum_{k=-m}^{m}\sum_{l=-m}^{m}P[i+k,j+l]
 \]
