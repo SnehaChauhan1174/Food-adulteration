@@ -234,6 +234,27 @@ $$
 
 now rom here two samples have diff adulateration percentages but their average intensities are very similar.
 
+25th nov
+now paper said that -- When the data matrixes for all the adulteration levels (
+Xp (m,n), for
+p = 0,5,10 ... 40) were created, mean spectral intensity values along
+the nine dimensions (9 spectral bands) were calculated and denoted as
+Xp as shown in Fig. 5. Thus, the dimensions of the
+Xp is
+1 * 9 
+Next, thevariation of the average spectral intensity values with the wavelength for different adulteration levels were shown in Fig. 6 however, they are not noticeably distinguished. Therefore, the identification of adulterated turmeric by the mean spectral signatures is not a viable solution, as it can lead to incorrect results. In order to reduce the data redundancy and to improve the discrimination between classes (adulterated levels),
+PCA was performed on the nine-dimensional dataset. In addition, it would allow us to reduce the correlation between each spectral band and pave the way to the construction of the functional relationship between a statistical metric and the adulteration level in a more efficient manner.
+
+now i asked some questions 
+first thing i want to ask is that if they suppose got spectral sig distinguised then how would theyuse this info to classify cuase i think thrie main goal is to classify the adulateration levels right if i am not wrong so they would do this
+nxt thing they said to use pca to get uncorrelated spectral bands how i get to knwo that features are diff bands and they can be correlated
+next thing they said Therefore,
+the PCA step was carried out in its traditional scenes to do a simplified
+dimension reduction which will enable us to construct the multivariate
+Gaussian distribution function in a more efficient manner.
+
+so why they want to construct the multivariate gaussian distribution functuon at the fist place
+
 
 
 
